@@ -5,9 +5,9 @@ const app = express();
 
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
-//app.use(helmet.xssFilter())
+app.use(helmet.xssFilter())
 
-//
+//test input name
 function displayName() {
     const nameInput = document.getElementById('nameInput');
     const outputParagraph = document.getElementById('output');
@@ -18,7 +18,7 @@ function displayName() {
     } else {
         outputParagraph.textContent = "Please enter your name.";
     }
-}
+  }
 
 
 
