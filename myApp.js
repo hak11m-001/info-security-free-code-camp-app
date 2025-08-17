@@ -5,11 +5,20 @@ const app = express();
 
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
+//app.use(helmet.xssFilter())
 
+//
+function displayName() {
+    const nameInput = document.getElementById('nameInput');
+    const outputParagraph = document.getElementById('output');
+    const name = nameInput.value;
 
-
-
-
+    if (name) {
+        outputParagraph.textContent = `Hello, ${name}!`;
+    } else {
+        outputParagraph.textContent = "Please enter your name.";
+    }
+}
 
 
 
